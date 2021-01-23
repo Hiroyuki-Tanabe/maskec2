@@ -1,0 +1,141 @@
+-- phpMyAdmin SQL Dump
+-- version 4.9.3
+-- https://www.phpmyadmin.net/
+--
+-- ホスト: localhost:3306
+-- 生成日時: 2021 年 1 月 16 日 09:43
+-- サーバのバージョン： 5.7.26
+-- PHP のバージョン: 7.4.2
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- データベース: `kadai`
+--
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `kadai`
+--
+
+CREATE TABLE `kadai` (
+  `id` int(12) NOT NULL,
+  `name` varchar(128) NOT NULL,
+  `file_name` varchar(255) NOT NULL,
+  `size` varchar(64) NOT NULL,
+  `price` int(4) NOT NULL,
+  `file_path` varchar(255) NOT NULL,
+  `description` varchar(140) DEFAULT NULL,
+  `insert_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- テーブルのデータのダンプ `kadai`
+--
+
+INSERT INTO `kadai` (`id`, `name`, `file_name`, `size`, `price`, `file_path`, `description`, `insert_time`, `update_time`) VALUES
+(2, '使い古しマスク', 'shutterstock_154614467.jpg', 'S', 0, './images/20201231064216shutterstock_154614467.jpg', 'マスク4', '2020-12-31 06:42:16', '2021-01-16 09:37:23'),
+(3, '中くらいのマスク', 'shutterstock_93645934.jpg', 'M', 2000, './images/20201231065123shutterstock_93645934.jpg', '34', '2020-12-31 06:51:23', '2021-01-16 09:09:05'),
+(4, 'マスク3', 'shutterstock_154614467.jpg', 'L', 1500, './images/20210103174504shutterstock_154614467.jpg', 'いい感じ', '2021-01-03 17:45:04', '2021-01-03 17:45:04'),
+(5, '小さなマスク', 'shutterstock_170236112.jpg', 'S', 1500, './images/20210103192744shutterstock_170236112.jpg', 'a', '2021-01-03 19:27:44', '2021-01-16 09:07:06'),
+(6, '大きなマスク', 'shutterstock_71800201.jpg', 'LL~', 400, './images/20210104084057shutterstock_71800201.jpg', 'あ', '2021-01-04 08:40:57', '2021-01-16 09:06:12'),
+(7, '冷感マスク', 'shutterstock_69598756.jpg', 'L', 800, './images/20210105071132shutterstock_69598756.jpg', 'ひんやりしています！', '2021-01-05 07:11:32', '2021-01-05 07:11:32'),
+(8, '超あったかマスク', 'shutterstock_71800201.jpg', 'M', 900, './images/20210115073534shutterstock_71800201.jpg', 'とってもあったかいです!', '2021-01-15 07:35:34', '2021-01-16 09:31:58'),
+(9, 'アディダスマスク', 'mask.jpg', 'M', 1200, './images/20210116093333mask.jpg', 'クールなデザインです', '2021-01-16 09:33:33', '2021-01-16 09:33:33');
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `review`
+--
+
+CREATE TABLE `review` (
+  `review_id` int(14) NOT NULL,
+  `reviewer` varchar(40) NOT NULL,
+  `id` int(11) NOT NULL,
+  `valuation` varchar(1) NOT NULL,
+  `comment` varchar(400) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- テーブルのデータのダンプ `review`
+--
+
+INSERT INTO `review` (`review_id`, `reviewer`, `id`, `valuation`, `comment`) VALUES
+(1, '', 7, 'S', '良い'),
+(2, '', 7, 'S', ''),
+(3, '', 1, 'S', '良い'),
+(4, '', 4, 'B', 'ちくちくして痛い。微妙。'),
+(5, '', 5, 'A', 'かなりいい！'),
+(6, '田邊', 7, 'B', '正直微妙、、'),
+(7, '田中', 7, 'A', 'まあまあ'),
+(8, '田邊', 6, 'A', '前のより良い'),
+(9, '', 5, 'S', ''),
+(10, '', 5, 'S', '');
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `user_list`
+--
+
+CREATE TABLE `user_list` (
+  `ID` int(11) NOT NULL,
+  `name` varchar(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- テーブルのデータのダンプ `user_list`
+--
+
+INSERT INTO `user_list` (`ID`, `name`) VALUES
+(1, '田中'),
+(2, '太田'),
+(3, '山本');
+
+--
+-- ダンプしたテーブルのインデックス
+--
+
+--
+-- テーブルのインデックス `kadai`
+--
+ALTER TABLE `kadai`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- テーブルのインデックス `review`
+--
+ALTER TABLE `review`
+  ADD PRIMARY KEY (`review_id`);
+
+--
+-- テーブルのインデックス `user_list`
+--
+ALTER TABLE `user_list`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- ダンプしたテーブルのAUTO_INCREMENT
+--
+
+--
+-- テーブルのAUTO_INCREMENT `kadai`
+--
+ALTER TABLE `kadai`
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- テーブルのAUTO_INCREMENT `review`
+--
+ALTER TABLE `review`
+  MODIFY `review_id` int(14) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- テーブルのAUTO_INCREMENT `user_list`
+--
+ALTER TABLE `user_list`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;

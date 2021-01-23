@@ -1,0 +1,437 @@
+#sample {
+    height: 100px;
+    width: 100px;
+}
+
+ul {
+    background-color: #000080;
+    height: 5vh;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    justify-content: space-around;
+}
+
+li {
+    color: cornsilk;
+    height: 50px;
+    align-items: center;
+
+}
+
+/*グリッド設定*/
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 15em));
+    grid-auto-rows: 1fr;
+    grid-gap: 1em;
+    margin: auto;
+}
+
+#brand {
+    font-size: 20px;
+    width: 20vw;
+    font-weight: bold;
+    padding: 3%;
+    color: white;
+}
+
+nav {
+    width: 30vw;
+    /* vertical-align: middle; */
+}
+
+.nav_item {
+    color: white;
+    width: 110px;
+}
+
+.nav_item:hover,#brand:hover  {
+    text-decoration: underline;
+    color: white;
+    font-weight: bold;
+}
+
+/* .login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+#login_form {
+    margin: 32px auto;
+    height: 200px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.login {
+	text-align: left;
+    display: inline-block;
+    font-size: 20px;
+}
+
+#login_form {
+    margin: 60px auto;
+    height: 200px;
+	text-align: center;
+	display: block;
+	/* border: 1px solid #000; */
+}
+
+
+/*フォーム全体*/
+#form1 {
+    width: 50vw;
+    height: 100%;
+    display: flex;
+    margin-left: 10%;
+}
+
+/*検索ボックス*/
+#sbox {
+    margin: 5px;
+    width: 80%;
+    border-radius: 2px 0 0 2px;
+    background: #eee;
+    font-size: 18px;
+}
+
+/*検索ボタン*/
+#sbtn {
+    margin: 5px;
+    width: 80px;
+
+    font-size: 18px;
+
+    display: inline-block;
+    padding: 0.3em 1em;
+    text-decoration: none;
+    background: #7fbfff;
+    color: white;
+    border-radius: 3px;
+    transition: .4s;
+}
+
+/*検索ボタンマウスオーバー時*/
+#sbtn:hover {
+    color: #7fbfff;
+    background-color: #eee;
+    border: solid 2px #7fbfff;
+}
+
+a {
+    /* color: white; */
+    text-decoration: none;
+    margin: 0px 5px;
+    width: 100%;
+}
+
+#product {
+    background-color: white;
+}
+
+.image {
+    height: 200px;
+    width: 250px;
+}
+
+#content {
+    height: 100px;
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-flow: column;
+    /* border:2px #ccc solid; */
+    /* height:300px; */
+    /* margin:0 0 1em; */
+
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+}
+
+#name {
+    font-size: 24px;
+    /* font-size: 30px; */
+    color: #007185;
+    font-weight: bold;
+}
+
+#price {
+    font-size: 24px;
+    color: red;
+}
+
+#size {
+    font-size: 16px;
+    color: gray;
+}
+
+/* select_buy.php */
+.choice {
+    width: 80vw;
+    min-width: 500px;
+    background-color: #EEE8AA;
+    margin: 40px 10vw;
+    position: relative;
+    display: inline-block;
+}
+
+.choice:after {
+    border: solid transparent;
+    content: '';
+    height: 0;
+    width: 0;
+    pointer-events: none;
+    position: absolute;
+    border-color: rgba(0, 153, 255, 0);
+    border-top-width: 26px;
+    border-bottom-width: 26px;
+    border-left-width: 26px;
+    border-right-width: 26px;
+    margin-left: -110px;
+    border-bottom-color: #EEE8AA;
+    bottom: 100%;
+
+}
+
+.buy {
+    height: 200px;
+}
+
+.buy:after {
+    left: 17%;
+}
+
+.sell {
+    height: 400px;
+}
+
+.sell:after {
+    left: 40%;
+}
+
+table {
+    margin: 50px auto;
+    line-height: 150%;
+    border-collapse: separate;
+    border-spacing: 20px 8px;
+    vertical-align: middle;
+}
+
+th {
+    min-width: 100px;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+td {
+    width: 400px;
+}
+
+#name_product {
+    width: 100%;
+    min-width: 100px;
+}
+
+#price_product {
+    width: 100px;
+    margin-right: 8px;
+}
+
+#caption {
+    width: 100%;
+    min-width: 100px;
+}
+
+button {
+    cursor: pointer;
+}
+img {
+    width: 100%!important;
+}
+
+/* モーダルCSS */
+.modalArea {
+    display: none;
+    position: fixed;
+    z-index: 10; /*サイトによってここの数値は調整 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .modalBg {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(30,30,30,0.9);
+  }
+  
+  .modalWrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    width: 70%;
+    max-width: 500px;
+    padding: 10px 30px;
+    background-color: #fff;
+  }
+  
+  .closeModal {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    cursor: pointer;
+  }
+
+.image_detail {
+    height: 400px;
+    width: auto;
+    object-fit: contain;
+    margin-top: 50px;
+}
+
+.content_detail {
+    margin-top: 20px;
+    text-align: center;
+    height: 300px;
+    /* line-height: 150%; */
+}
+
+#name, #size, #price, #caption {
+    line-height: 150%;
+}
+
+.back {
+    color: black!important;
+    text-align: center;
+    font-size: 20px;
+    margin: 10px;
+}
+
+#content_view {
+    margin: 20px;
+}
+
+.table_review {
+    border-spacing: 15px 25px;
+}
+
+.table_review th {
+    font-size: 20px;
+}
+
+.table_review td {
+    width: 400px;
+}
+
+.table_review textarea {
+    height: 200px;
+}
+
+/* select_detail.php */ 
+#review a {
+    font-size: 20px;
+}
+
+#content_review {
+    margin: 20px;
+}
+
+#toppage {
+    background-image: url("../img/img1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+    font-size: 32px;
+}
+
+#detail_content {
+    text-align: center;
+    line-height: 150%;
+    margin: 0px 550px;
+}
+
+#submit_review {
+    line-height: 250%;
+}
+
+#thank {
+    height:70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    line-height: 300%;
+}
+
+#testbutton {
+    margin: 60px;
+    height: 50px;
+    width: 250px;
+    font-size: 18px;
+
+    display: inline-block;
+    padding: 0.3em 1em;
+    text-decoration: none;
+    background: #7fbfff;
+    color: white;
+
+    border-radius: 3px;
+    transition: .4s;
+}
+
+#testbutton:hover {
+    color: #7fbfff;
+    background-color: #eee;
+    border: solid 2px #7fbfff;
+  }
+
+.content_review_child {
+    text-align: left!important;
+    /* padding: 50px; */
+}
+
+/* #err_msgs {
+    color: red;
+    line-height: 200%;
+    text-align: center;
+    vertical-align: middle;
+
+    display: table-cell;
+    vertical-align: middle;
+} */
+
+.err_msgs {
+    /* max-width: 500px; */
+    /* height: 100vw; */
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px 30px;
+    /* background: lightblue; */
+    margin-top: 80px;
+  }
+.err_msgs p{
+    color: red;
+    line-height: 200%;
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+  }
+
+.child {
+    margin-top: 30px;
+}
